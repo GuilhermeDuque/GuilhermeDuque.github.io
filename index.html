@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after {
@@ -59,12 +59,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 68px;
+      min-height: 68px;
     }
 
     .nav-name {
       font-family: "Lora", serif;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 700;
       color: var(--accent);
       letter-spacing: 0.02em;
@@ -73,7 +73,7 @@
 
     .nav-links {
       display: flex;
-      gap: 1.25rem;
+      gap: 1rem;
       list-style: none;
       align-items: center;
       flex-wrap: wrap;
@@ -83,10 +83,10 @@
     .nav-links a {
       text-decoration: none;
       color: var(--muted);
-      font-size: 0.78rem;
+      font-size: 0.73rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 800;
       transition: color 0.2s;
     }
 
@@ -126,7 +126,7 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .hero-tag::before {
@@ -174,7 +174,7 @@
       color: var(--accent);
       background: rgba(255, 255, 255, 0.55);
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .hero-buttons {
@@ -187,7 +187,7 @@
     .btn-secondary {
       display: inline-block;
       padding: 12px 28px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.84rem;
       letter-spacing: 0.05em;
       text-decoration: none;
@@ -274,7 +274,7 @@
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 0.6rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     h2 {
@@ -318,7 +318,9 @@
     .stat-card,
     .research-card,
     .pub-item,
-    .contact-item {
+    .contact-item,
+    .project-card,
+    .presentation-card {
       background: var(--card);
       border: 1px solid var(--border);
       box-shadow: 0 12px 30px var(--shadow);
@@ -343,7 +345,7 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .edu-list {
@@ -369,7 +371,7 @@
     .edu-year {
       font-size: 0.82rem;
       color: var(--accent);
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.05em;
       padding-top: 3px;
     }
@@ -397,23 +399,29 @@
       border-radius: 50px;
       letter-spacing: 0.05em;
       margin-top: 0.65rem;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
     }
 
-    .research-grid {
+    .research-grid,
+    .project-grid,
+    .presentation-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
     }
 
-    .research-card {
+    .research-card,
+    .project-card,
+    .presentation-card {
       border-radius: 14px;
       padding: 2rem;
       transition: border-color 0.2s, transform 0.2s;
     }
 
-    .research-card:hover {
+    .research-card:hover,
+    .project-card:hover,
+    .presentation-card:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
     }
@@ -435,11 +443,30 @@
       stroke: var(--accent);
     }
 
-    .research-card p {
+    .research-card p,
+    .project-card p,
+    .presentation-card p {
       font-size: 0.92rem;
       color: var(--muted);
       margin-top: 0.5rem;
       line-height: 1.75;
+    }
+
+    .project-meta,
+    .presentation-meta {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-role {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      font-style: italic;
     }
 
     .pub-list {
@@ -466,12 +493,12 @@
       letter-spacing: 0.1em;
       color: var(--accent);
       margin-bottom: 0.55rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .pub-title {
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--text);
       margin-bottom: 0.45rem;
       line-height: 1.55;
@@ -501,8 +528,41 @@
 
     .links-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 1rem;
+    }
+
+    .social-card {
+      min-height: 135px;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 1.4rem 1rem;
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .brand-icon svg {
+      width: 25px;
+      height: 25px;
+      fill: currentColor;
+    }
+
+    .brand-icon .letters {
+      font-weight: 900;
+      font-size: 0.86rem;
+      letter-spacing: -0.03em;
     }
 
     .contact-grid {
@@ -552,7 +612,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .contact-val {
@@ -580,7 +640,7 @@
       transform: none;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 1080px) {
       nav {
         height: auto;
         padding: 1rem;
@@ -593,9 +653,11 @@
       }
 
       #home {
-        padding-top: 170px;
+        padding-top: 190px;
       }
+    }
 
+    @media (max-width: 960px) {
       .hero-inner {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -639,6 +701,10 @@
       h2 {
         font-size: 1.9rem;
       }
+
+      .nav-links a {
+        font-size: 0.68rem;
+      }
     }
   </style>
 </head>
@@ -652,9 +718,11 @@
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#courses">Courses</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#presentations">Presentations</a></li>
       <li><a href="#links">Links</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -703,22 +771,23 @@
       <div class="about-grid fade-in">
         <div class="about-text">
           <p>
-            I am a PhD student in Political Science at the Institute of Social and Political Studies
-            of the State University of Rio de Janeiro — IESP-UERJ. I hold a Master's degree in Social
-            Sciences from the Federal University of Juiz de Fora — UFJF, within the research line
-            <em>Culture, Democracy, and Institutions</em>.
+            I am a PhD student in Political Science at the Instituto de Estudos Sociais e Políticos
+            da Universidade do Estado do Rio de Janeiro — IESP-UERJ. I hold a Master's degree in
+            Social Sciences from the Universidade Federal de Juiz de Fora — UFJF, within the research
+            line <em>Culture, Democracy, and Institutions</em>.
           </p>
 
           <p>
             My research interests include local politics, distributive politics, associativism,
-            clientelism, and political theory. I currently study the strategies used by mayors
-            to obtain parliamentary amendments and the dynamics of interest intermediation in
-            Brazilian local politics.
+            clientelism, political brokers, and political theory. I currently study the strategies used
+            by mayors to obtain parliamentary amendments and the dynamics of interest intermediation
+            in Brazilian local politics.
           </p>
 
           <p>
-            I am a researcher at the Center for Research on Local Politics — NEPOL-UFJF — and have
-            worked on projects related to representation and political brokers in Brazilian municipalities.
+            I am a researcher at the Núcleo de Pesquisa em Política Local — NEPOL-UFJF — and have
+            worked on projects related to representation, political brokers, public policy evaluation,
+            local power, and subnational politics in Brazil and Latin America.
           </p>
         </div>
 
@@ -729,13 +798,13 @@
           </div>
 
           <div class="stat-card">
-            <div class="stat-number">2</div>
+            <div class="stat-number">5+</div>
             <div class="stat-label">Research Projects</div>
           </div>
 
           <div class="stat-card">
-            <div class="stat-number">7+</div>
-            <div class="stat-label">Conference Presentations</div>
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Courses & Training</div>
           </div>
 
           <div class="stat-card">
@@ -757,7 +826,7 @@
           <div class="edu-year">2025 –<br>Present</div>
           <div>
             <h3>PhD in Political Science</h3>
-            <p class="edu-inst">Institute of Social and Political Studies — IESP-UERJ · Rio de Janeiro, Brazil</p>
+            <p class="edu-inst">Instituto de Estudos Sociais e Políticos — IESP-UERJ · Rio de Janeiro, Brazil</p>
             <p class="edu-detail">
               Research: Mayoral strategies for obtaining parliamentary amendments and political brokers in local politics.
             </p>
@@ -769,7 +838,7 @@
           <div class="edu-year">2023 – 2025</div>
           <div>
             <h3>Master's Degree in Social Sciences</h3>
-            <p class="edu-inst">Federal University of Juiz de Fora — UFJF · Juiz de Fora, Brazil</p>
+            <p class="edu-inst">Universidade Federal de Juiz de Fora — UFJF · Juiz de Fora, Brazil</p>
             <p class="edu-detail">Research line: Culture, Democracy, and Institutions.</p>
             <p class="edu-detail">
               Thesis: <em>Local Voices, Political Connections: The Role of Neighborhood Association Presidents as Political Brokers</em> — 2025.
@@ -782,7 +851,7 @@
           <div class="edu-year">2018 – 2020</div>
           <div>
             <h3>Degree in Social Sciences</h3>
-            <p class="edu-inst">Federal University of Juiz de Fora — UFJF · Juiz de Fora, Brazil</p>
+            <p class="edu-inst">Universidade Federal de Juiz de Fora — UFJF · Juiz de Fora, Brazil</p>
             <span class="badge">Completed</span>
           </div>
         </div>
@@ -791,7 +860,7 @@
           <div class="edu-year">2018 – 2020</div>
           <div>
             <h3>Bachelor's Degree in Humanities</h3>
-            <p class="edu-inst">Federal University of Juiz de Fora — UFJF · Juiz de Fora, Brazil</p>
+            <p class="edu-inst">Universidade Federal de Juiz de Fora — UFJF · Juiz de Fora, Brazil</p>
             <span class="badge">Completed</span>
           </div>
         </div>
@@ -801,7 +870,7 @@
 
   <section id="research">
     <div class="section-inner">
-      <p class="section-label">Interests & Projects</p>
+      <p class="section-label">Interests & Themes</p>
       <h2>Research</h2>
 
       <div class="research-grid fade-in">
@@ -840,10 +909,10 @@
               <path d="M12 8v4l3 3"/>
             </svg>
           </div>
-          <h3>Local Power in Brazil: Three Decades</h3>
+          <h3>Local Power in Brazil</h3>
           <p>
             Systematic mapping of studies on local power published in leading Political Science
-            and International Relations journals over the last 30 years.
+            and International Relations journals over the last three decades.
           </p>
         </div>
 
@@ -865,6 +934,84 @@
     </div>
   </section>
 
+  <section id="projects">
+    <div class="section-inner">
+      <p class="section-label">Research & Extension</p>
+      <h2>Projects</h2>
+
+      <div class="project-grid fade-in">
+        <div class="project-card">
+          <p class="project-meta">Research Project · 2025 – Present</p>
+          <h3>Caminhos da Ultradireita na América Latina: análise subnacional comparada</h3>
+          <p>
+            Comparative subnational research on far-right actors in Brazil and Argentina, focusing on
+            institutional politics, agendas, networks, strategies, and governing practices.
+          </p>
+          <p class="project-role">Role: Coordinator.</p>
+        </div>
+
+        <div class="project-card">
+          <p class="project-meta">Research Project · 2025 – Present</p>
+          <h3>Laboratório de Monitoramento e Avaliação de Políticas e Eleições — MAPE</h3>
+          <p>
+            Research laboratory focused on producing scientific evidence for debates on democracy,
+            public policies, elections, and the effects of government action on people's lives.
+          </p>
+          <p class="project-role">Role: Research member.</p>
+        </div>
+
+        <div class="project-card">
+          <p class="project-meta">Research Project · 2023 – Present</p>
+          <h3>Representação, dinâmicas de intermediação de interesses e brokers na política local brasileira</h3>
+          <p>
+            Project on political brokers and multilevel relations among Brazilian political actors,
+            with attention to interest intermediation in local politics.
+          </p>
+          <p class="project-role">Role: Research member.</p>
+        </div>
+
+        <div class="project-card">
+          <p class="project-meta">Research Project · 2022 – Present</p>
+          <h3>Poder local no Brasil: três décadas de estudos</h3>
+          <p>
+            Analysis of studies on local power in Brazil, focusing on articles published in leading
+            journals in Political Science and International Relations over the last three decades.
+          </p>
+          <p class="project-role">Role: Research member.</p>
+        </div>
+
+        <div class="project-card">
+          <p class="project-meta">Research Project · 2021 – Present</p>
+          <h3>Distributivismo, clientelismo e brokers na política local brasileira</h3>
+          <p>
+            Multimethod research on local power, distributive politics, clientelism, and the role of
+            brokers connecting politicians, social leaders, organizations, and voters at the local level.
+          </p>
+          <p class="project-role">Role: Research member.</p>
+        </div>
+
+        <div class="project-card">
+          <p class="project-meta">Extension Project · 2025 – Present</p>
+          <h3>O Que Funciona — OQF</h3>
+          <p>
+            Extension and research initiative linked to MAPE/IESP-UERJ, focused on systematic reviews
+            and meta-reviews about public policies in Brazil and abroad.
+          </p>
+          <p class="project-role">Role: Coordinator.</p>
+        </div>
+
+        <div class="project-card">
+          <p class="project-meta">Extension Project · 2021 – 2024</p>
+          <h3>Axios Empresa Junior das Ciências Sociais</h3>
+          <p>
+            Junior enterprise in Social Sciences at Universidade Federal de Juiz de Fora — UFJF.
+          </p>
+          <p class="project-role">Role: Member.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="teaching">
     <div class="section-inner">
       <p class="section-label">Teaching Experience</p>
@@ -872,26 +1019,26 @@
 
       <div class="edu-list fade-in">
         <div class="edu-item">
-          <div class="edu-year">Year</div>
+          <div class="edu-year">2025</div>
           <div>
-            <h3>Course Title</h3>
-            <p class="edu-inst">Institution · Department</p>
+            <h3>Introdução ao R</h3>
+            <p class="edu-inst">Short course taught / Other technical production</p>
             <p class="edu-detail">
-              Add here the course you taught, your role, and a short description of the course.
+              Course focused on introductory tools and practices for using R in data analysis.
             </p>
-            <span class="badge">Instructor / Teaching Assistant</span>
+            <span class="badge">Short course taught</span>
           </div>
         </div>
 
         <div class="edu-item">
-          <div class="edu-year">Year</div>
+          <div class="edu-year">2025</div>
           <div>
-            <h3>Course Title</h3>
-            <p class="edu-inst">Institution · Department</p>
+            <h3>Minicurso de Introdução ao R</h3>
+            <p class="edu-inst">Short course / Introductory training</p>
             <p class="edu-detail">
-              Add another teaching experience here.
+              Introductory mini-course on R, with emphasis on basic workflows for social science research.
             </p>
-            <span class="badge">Teaching</span>
+            <span class="badge">Mini-course taught</span>
           </div>
         </div>
       </div>
@@ -905,25 +1052,151 @@
 
       <div class="edu-list fade-in">
         <div class="edu-item">
-          <div class="edu-year">Year</div>
+          <div class="edu-year">2025</div>
           <div>
-            <h3>Course, Workshop, or Summer School Title</h3>
-            <p class="edu-inst">Institution or Platform</p>
-            <p class="edu-detail">
-              Add a short description, workload, or main topic.
-            </p>
+            <h3>Análise de Dados Espaciais</h3>
+            <p class="edu-inst">Universidade do Estado do Rio de Janeiro — UERJ, Brazil</p>
+            <p class="edu-detail">Workload: 3 hours.</p>
             <span class="badge">Completed</span>
           </div>
         </div>
 
         <div class="edu-item">
-          <div class="edu-year">Year</div>
+          <div class="edu-year">2025</div>
           <div>
-            <h3>Course, Workshop, or Training Activity</h3>
-            <p class="edu-inst">Institution or Platform</p>
-            <p class="edu-detail">
-              Add another course, summer school, workshop, or training activity here.
-            </p>
+            <h3>Text-as-Data e Deep Learning</h3>
+            <p class="edu-inst">Universidade do Estado do Rio de Janeiro — UERJ, Brazil</p>
+            <p class="edu-detail">Workload: 3 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2025</div>
+          <div>
+            <h3>Análise Bibliométrica</h3>
+            <p class="edu-inst">Universidade do Estado do Rio de Janeiro — UERJ, Brazil</p>
+            <p class="edu-detail">Workload: 2 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2025</div>
+          <div>
+            <h3>Machine Learning</h3>
+            <p class="edu-inst">Universidade do Estado do Rio de Janeiro — UERJ, Brazil</p>
+            <p class="edu-detail">Workload: 2 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2025</div>
+          <div>
+            <h3>Grupos Focais</h3>
+            <p class="edu-inst">Universidade do Estado do Rio de Janeiro — UERJ, Brazil</p>
+            <p class="edu-detail">Workload: 2 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2025</div>
+          <div>
+            <h3>Entrevistas em Profundidade</h3>
+            <p class="edu-inst">Universidade do Estado do Rio de Janeiro — UERJ, Brazil</p>
+            <p class="edu-detail">Workload: 2 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2025</div>
+          <div>
+            <h3>Process Tracing e Inferência Causal</h3>
+            <p class="edu-inst">Universidade do Estado do Rio de Janeiro — UERJ, Brazil</p>
+            <p class="edu-detail">Workload: 2 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2024</div>
+          <div>
+            <h3>Análise de conteúdo automatizada: modelagem de tópicos e análise multivariada</h3>
+            <p class="edu-inst">Universidade Federal de Juiz de Fora — UFJF, Brazil</p>
+            <p class="edu-detail">Workload: 4 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2024</div>
+          <div>
+            <h3>R para Ciência de Dados I</h3>
+            <p class="edu-inst">Curso-R, Brazil</p>
+            <p class="edu-detail">Workload: 18 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2024</div>
+          <div>
+            <h3>R para Ciência de Dados II</h3>
+            <p class="edu-inst">Curso-R, Brazil</p>
+            <p class="edu-detail">Workload: 18 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2023</div>
+          <div>
+            <h3>Minicurso Power BI</h3>
+            <p class="edu-inst">Universidade Federal de Juiz de Fora — UFJF, Brazil</p>
+            <p class="edu-detail">Workload: 6 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2021</div>
+          <div>
+            <h3>Visualização Gráfica no R com GGPLOT2</h3>
+            <p class="edu-inst">Universidade Federal de Juiz de Fora — UFJF, Brazil</p>
+            <p class="edu-detail">Workload: 15 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2020</div>
+          <div>
+            <h3>Promover a Imaginação Sociológica</h3>
+            <p class="edu-inst">Universidade Federal do Rio Grande do Sul — UFRGS, Brazil</p>
+            <p class="edu-detail">Workload: 12 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2019</div>
+          <div>
+            <h3>Antropologia Urbana: histórias, abordagens, perspectivas</h3>
+            <p class="edu-inst">Universidade Federal de Juiz de Fora — UFJF, Brazil</p>
+            <p class="edu-detail">Workload: 15 hours.</p>
+            <span class="badge">Completed</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-year">2019</div>
+          <div>
+            <h3>Poder, controle e autoritarismo no Brasil</h3>
+            <p class="edu-inst">Universidade Federal de Juiz de Fora — UFJF, Brazil</p>
+            <p class="edu-detail">Workload: 8 hours.</p>
             <span class="badge">Completed</span>
           </div>
         </div>
@@ -998,50 +1271,92 @@
     </div>
   </section>
 
+  <section id="presentations">
+    <div class="section-inner">
+      <p class="section-label">Academic Events</p>
+      <h2>Work Presentations</h2>
+
+      <div class="presentation-grid fade-in">
+        <div class="presentation-card">
+          <p class="presentation-meta">Conference Presentation · 2024</p>
+          <h3>Jürgen Habermas: a mudança na resolução da esfera pública</h3>
+          <p>
+            Presented at Primeiro Seminário Nacional Crise e Metamorfoses da Sociologia,
+            Juiz de Fora, Brazil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="links">
     <div class="section-inner">
       <p class="section-label">Academic & Professional Profiles</p>
       <h2>Links</h2>
 
       <div class="links-grid fade-in">
-        <a href="https://github.com/GuilhermeDuque" target="_blank" class="contact-item">
+        <a href="https://github.com/GuilhermeDuque" target="_blank" class="contact-item social-card" aria-label="GitHub">
+          <span class="brand-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.05c-3.2.7-3.87-1.37-3.87-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18.92-.26 1.9-.38 2.88-.39.98.01 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.35.78 1.05.78 2.12v3.14c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+            </svg>
+          </span>
           <div class="contact-info">
             <span class="contact-label">GitHub</span>
-            <span class="contact-val">github.com/GuilhermeDuque</span>
+            <span class="contact-val">GuilhermeDuque</span>
           </div>
         </a>
 
-        <a href="https://www.linkedin.com/in/gui-duque/" target="_blank" class="contact-item">
+        <a href="https://www.linkedin.com/in/gui-duque/" target="_blank" class="contact-item social-card" aria-label="LinkedIn">
+          <span class="brand-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.3 8.1h4.4V23H.3V8.1Zm7.1 0h4.22v2.04h.06c.59-1.12 2.03-2.3 4.18-2.3 4.47 0 5.29 2.94 5.29 6.76V23h-4.4v-7.45c0-1.78-.03-4.07-2.48-4.07-2.49 0-2.87 1.94-2.87 3.94V23H7.4V8.1Z"/>
+            </svg>
+          </span>
           <div class="contact-info">
             <span class="contact-label">LinkedIn</span>
-            <span class="contact-val">linkedin.com/in/gui-duque</span>
+            <span class="contact-val">gui-duque</span>
           </div>
         </a>
 
-        <a href="https://x.com/guiduque2312" target="_blank" class="contact-item">
+        <a href="https://x.com/guiduque2312" target="_blank" class="contact-item social-card" aria-label="Twitter or X">
+          <span class="brand-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.9 2H22l-6.8 7.78L23.2 22h-6.27l-4.91-6.42L6.4 22H3.3l7.28-8.32L2.9 2h6.43l4.44 5.87L18.9 2Zm-1.1 17.85h1.72L8.38 4.03H6.53L17.8 19.85Z"/>
+            </svg>
+          </span>
           <div class="contact-info">
             <span class="contact-label">Twitter / X</span>
             <span class="contact-val">@guiduque2312</span>
           </div>
         </a>
 
-        <a href="https://orcid.org/0009-0003-9530-3783" target="_blank" class="contact-item">
+        <a href="https://orcid.org/0009-0003-9530-3783" target="_blank" class="contact-item social-card" aria-label="ORCID">
+          <span class="brand-icon">
+            <span class="letters">iD</span>
+          </span>
           <div class="contact-info">
             <span class="contact-label">ORCID</span>
             <span class="contact-val">0009-0003-9530-3783</span>
           </div>
         </a>
 
-        <a href="https://scholar.google.com.br/citations?user=RMBNBTQAAAAJ&hl=pt-BR" target="_blank" class="contact-item">
+        <a href="https://scholar.google.com.br/citations?user=RMBNBTQAAAAJ&hl=pt-BR" target="_blank" class="contact-item social-card" aria-label="Google Scholar">
+          <span class="brand-icon">
+            <span class="letters">GS</span>
+          </span>
           <div class="contact-info">
             <span class="contact-label">Google Scholar</span>
-            <span class="contact-val">View publications and citations</span>
+            <span class="contact-val">Publications & citations</span>
           </div>
         </a>
 
-        <a href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K1160492H8" target="_blank" class="contact-item">
+        <a href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K1160492H8" target="_blank" class="contact-item social-card" aria-label="Lattes Curriculum">
+          <span class="brand-icon">
+            <span class="letters">CV</span>
+          </span>
           <div class="contact-info">
-            <span class="contact-label">Lattes Curriculum</span>
+            <span class="contact-label">Lattes</span>
             <span class="contact-val">CNPq · K1160492H8</span>
           </div>
         </a>
@@ -1058,7 +1373,7 @@
         <div class="contact-text">
           <p>
             I am open to academic collaborations, seminar invitations, and exchanges on local politics,
-            distributive politics, interest intermediation, and Brazilian political science.
+            distributive politics, interest intermediation, public policy evaluation, and Brazilian political science.
           </p>
 
           <p>
